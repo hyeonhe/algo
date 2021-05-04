@@ -15,7 +15,9 @@ while n != -1:  # n이 -1일 때까지 반복
     for i in range(len(nums) - 1):
         numSum += nums[i]
 
+    # 완전수 판단하기
     if n == numSum:
+        # 6 = 1 + 2 + 3
         print("{} = " .format(n), end='')
         for i in range(len(nums) - 1):
             print(nums[i], end='')
