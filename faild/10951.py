@@ -1,9 +1,9 @@
 while True:
     try:
-        a, b = map(int, input().split)
-        a < 0
-        b > 10
-        a = ' '
-        b = ' '
+        a, b = map(int, input().split())
+        if a > 0 and b < 10:
+            print(a+b)
+        else:
+            break
     except:
-    print(a+b)
+        pass
