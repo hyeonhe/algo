@@ -1,27 +1,11 @@
+# https://www.acmicpc.net/problem/9625
+# 피보나치 수열이래.. 그리고 시간초과
 k = int(input())
-ab = ['A']
-for i in range(1, k+1):
-    for j in range(len(ab)):
-        a = ab.count('A')
-        b = ab.count('B')
-        # if "A" in ab and "B" not in ab:
-        #     a = ab.count('A')
-        #     for e in range(a):
-        #         ab.remove('A')
-        #         ab.append('B')
+# 'B'는 'BA'로 'A'는 'B'로 바뀜
+word = 'A'
+for i in range(k):
+    word = word.replace('A', 'C')
+    word = word.replace('B', 'BA')
+    word = word.replace('C', 'B')
 
-        # elif 'A' not in ab and 'B' in ab:
-        #     b = ab.count('B')
-        #     for e in range(b):
-        #         ab.append('A')
-
-        # elif 'A' in ab and 'B' in ab:
-        #     a = ab.count('A')
-        #     b = ab.count('B')
-        #     for c in range(a):
-        #         ab.append('B')
-        #         ab.remove('A')
-        #     for d in range(b):
-        #         ab.append('A')
-
-print(ab.count('A'), ab.count('B'))
+print(word.count('A'), word.count('B'))
