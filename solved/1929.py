@@ -8,7 +8,7 @@ m, n = map(int, input().split())
 num = [True] * (n+1)
 num[1] = False
 
-for i in range(2, int(sqrt(n+1)) + 1):
+for i in range(2, int(sqrt(n)) + 1):
     if num[i] == True:
         j = 2
         while i * j <= n:
