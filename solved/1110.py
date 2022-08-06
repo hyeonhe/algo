@@ -1,15 +1,16 @@
-original_num = int(input())
-new_num = original_num
+n = int(input())
+
+answer = n
+temp = 0
 count = 0
-result = 0
 
 while True:
-    ten = new_num // 10
-    one = new_num % 10
-    result = ten + one
-    new_num = one * 10 + result % 10
+    a = answer // 10  
+    b = answer % 10
     count += 1
-    if original_num == new_num:
+    answer = b * 10 + (a + b) % 10
+
+    if n == answer:
         break
 
 print(count)
