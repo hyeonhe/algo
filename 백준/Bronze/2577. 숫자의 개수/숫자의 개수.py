@@ -1,0 +1,16 @@
+a = int(input())
+b = int(input())
+c = int(input())
+mult = a * b * c
+mult = list(str(mult))
+
+print(mult.count("0"))
+print(mult.count("1"))
+print(mult.count("2"))
+print(mult.count("3"))
+print(mult.count("4"))
+print(mult.count("5"))
+print(mult.count("6"))
+print(mult.count("7"))
+print(mult.count("8"))
+print(mult.count("9"))
