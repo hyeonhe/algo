@@ -16,7 +16,7 @@ answer = set(array[m:n + 1])
 if 0 in answer:
     answer.remove(0)
 
-if answer == set():
+if len(answer) == 0:
     print(-1)
 else:
     print(sum(answer))
