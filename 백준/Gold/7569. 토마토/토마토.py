@@ -5,7 +5,12 @@ def input():
     return sys.stdin.readline().rstrip()
 
 m, n, h = map(int, input().split())
-graph = [[list(map(int, input().split())) for j in range(n)] for i in range(h)]
+graph = []
+for i in range(h):
+    tmp = []
+    for j in range(n):
+        tmp.append(list(map(int, input().split())))
+    graph.append(tmp)
 
 dx = [1, -1, 0, 0, 0, 0]
 dy = [0, 0, 1, -1, 0, 0]
@@ -34,8 +39,6 @@ def bfs():
                 queue.append((nx, ny, nz))
 
 bfs()
-# print(graph[0])
-# print(graph[1])
 
 result = 0
 for i in graph:
