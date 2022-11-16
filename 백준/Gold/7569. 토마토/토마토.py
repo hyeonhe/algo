@@ -5,23 +5,21 @@ def input():
     return sys.stdin.readline().rstrip()
 
 m, n, h = map(int, input().split())
+queue = deque()
 graph = []
 for i in range(h):
     tmp = []
     for j in range(n):
         tmp.append(list(map(int, input().split())))
+        for k in range(m):
+            if tmp[j][k] == 1:
+                queue.append((i, j, k))
+
     graph.append(tmp)
 
 dx = [1, -1, 0, 0, 0, 0]
 dy = [0, 0, 1, -1, 0, 0]
 dz = [0, 0, 0, 0, 1, -1]
-queue = deque()
-
-for i in range(h):
-    for j in range(n):
-        for k in range(m):
-            if graph[i][j][k] == 1:
-                queue.append((i, j, k))
 
 def bfs():
     while queue:
