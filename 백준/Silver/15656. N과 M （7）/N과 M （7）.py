@@ -9,5 +9,4 @@ num = sorted(list(map(int, input().split())))
 
 array = product(num, repeat = m)
 
-for i in array:
-    print(' '.join(map(str, i)))
+print('\n'.join(' '.join(map(str, i)) for i in array))
