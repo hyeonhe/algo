@@ -6,7 +6,8 @@ def input():
 
 n, m = map(int, input().split())
 num = sorted(list(map(int, input().split())))
+num = map(str, num)
 
-array = product(num, repeat = m)
+array = map(' '.join, product(num, repeat = m))
 
-print('\n'.join(' '.join(map(str, i)) for i in array))
+print('\n'.join(array))
