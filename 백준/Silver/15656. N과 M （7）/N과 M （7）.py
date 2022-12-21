@@ -5,7 +5,7 @@ def input():
     return sys.stdin.readline().rstrip()
 
 n, m = map(int, input().split())
-num = list(map(int, input().split()))
+num = sorted(list(map(int, input().split())))
 num.sort()
 
 array = product(num, repeat = m)
