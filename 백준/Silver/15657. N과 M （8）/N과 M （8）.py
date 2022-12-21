@@ -6,7 +6,7 @@ def input():
 
 n, m = map(int, input().split())
 num = sorted(list(map(int, input().split())))
-array = sorted(set(combinations_with_replacement(num, m)))
+array = sorted(combinations_with_replacement(num, m))
 
 for i in array:
     print(' '.join(map(str, i)))
