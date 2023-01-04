@@ -15,10 +15,11 @@ for i in range(n - 1):
 
 def dfs(v):
     for i in graph[v]:
-        if not visited[i]:
+        if visited[i] == 0:
             visited[i] = v
             dfs(i)
 
 dfs(1)
 
 print('\n'.join(map(str, visited[2:])))
+
