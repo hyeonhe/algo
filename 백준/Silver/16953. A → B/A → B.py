@@ -8,12 +8,12 @@ cnt = 1
 
 while b != a:
     temp = b
+    cnt += 1
 
     if b % 10 == 1:
         b //= 10
     elif b % 2 == 0:
         b //= 2
-    cnt += 1
 
     if temp == b:
         print(-1)
