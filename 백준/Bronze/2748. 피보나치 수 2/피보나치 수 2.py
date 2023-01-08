@@ -1,18 +1,8 @@
-def fib(cache, n):
-    if cache[n] != -1:
-        return cache[n]
-    if n == 0:
-        cache[n] = n
-    elif n == 1:
-        cache[n] = 1
-    else:
-        cache[n] = fib(cache, n-1) + fib(cache, n-2)
-    return cache[n]
+n = int(input())
+dp = [0] * 91
+dp[1], dp[2] = 1, 1
 
+for i in range(3, n + 1):
+    dp[i] = dp[i-1] + dp[i-2]
 
-def solve():
-    n = int(input())
-    cache = [-1 for i in range(n+1)]
-    print(fib(cache, n))
-
-solve()
+print(dp[n])
