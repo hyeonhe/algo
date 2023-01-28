@@ -5,10 +5,10 @@ n = int(input())
 _dict = dict()
 for _ in range(n):
     name, log = input().split()
-    _dict[name] = log
-
-_dict = sorted(_dict.items(), key = lambda item: item[0], reverse=True)
-
-for item in _dict:
-    if item[1] == 'enter':
-        print(item[0])
+    if log == 'enter':
+        _dict[name] = log
+    else:
+        if name in _dict:
+            del _dict[name]
+    
+print('\n'.join(sorted(_dict.keys(), reverse=True)))
