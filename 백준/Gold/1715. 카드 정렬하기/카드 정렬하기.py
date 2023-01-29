@@ -1,23 +1,19 @@
 import sys
 import heapq
-
-def input():
-    return sys.stdin.readline().rstrip()
+input = sys.stdin.readline
 
 n = int(input())
-
 heap = []
-for i in range(n):
-    data = int(input())
-    heapq.heappush(heap, data)
+ans = 0
 
-result = 0
+for _ in range(n):
+    heapq.heappush(heap, int(input()))
 
 while len(heap) != 1:
     one = heapq.heappop(heap)
     two = heapq.heappop(heap)
-    sum_value = one + two
-    result += sum_value
-    heapq.heappush(heap, sum_value)
+    tmp = one + two
+    ans += tmp
+    heapq.heappush(heap, tmp)
 
-print(result)
+print(ans)
