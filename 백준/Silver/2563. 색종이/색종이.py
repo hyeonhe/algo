@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 array = [[0] * 101 for _ in range(101)]
 ans = 0
@@ -10,6 +13,6 @@ for _ in range(n):
             array[i][j] = 1
 
 for a in array:
-    ans += a.count(1)
+    ans += sum(a)
 
 print(ans)
