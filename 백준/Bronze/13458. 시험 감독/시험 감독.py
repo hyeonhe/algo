@@ -7,8 +7,9 @@ for i in arr:
     cnt += 1
     i -= b
     if i > 0:
-        cnt += i // c
-        if i % c != 0:
-            cnt += 1
+        if i % c:
+            cnt += i // c + 1
+        else:
+            cnt += i // c
 
 print(cnt)
