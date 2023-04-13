@@ -1,29 +1,24 @@
-import sys
 from collections import deque
 
-def input():
-    return sys.stdin.readline().rstrip()
-
-array = []
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 
-n = int(input())
-graph = [list(map(int, input())) for _ in range(n)]
-
-def bfs(graph, a, b):
+def bfs(x, y, cnt):
     queue = deque()
-    graph[a][b] = 0
-    queue.append((a, b))
-    cnt = 1
+    queue.append((x, y))
+    graph[x][y] += 1
+    cnt += 1
+
     while queue:
         x, y = queue.popleft()
+        
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
 
             if nx < 0 or nx >= n or ny < 0 or ny >= n:
                 continue
+
             if graph[nx][ny] == 1:
                 graph[nx][ny] = 0
                 queue.append((nx, ny))
@@ -31,13 +26,17 @@ def bfs(graph, a, b):
 
     return cnt
 
+n = int(input())
+graph = [list(map(int, input())) for _ in range(n)]
+
+total = 0
+arr = []
 for i in range(n):
     for j in range(n):
         if graph[i][j] == 1:
-            array.append(bfs(graph, i, j))
-            
-array.sort()
-print(len(array))
+            total += 1
+            arr.append(bfs(i, j, 0))
 
-for i in array:
-    print(i)
+arr.sort()
+print(total)
+print('\n'.join(map(str, arr)))
