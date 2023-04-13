@@ -3,11 +3,11 @@ from collections import deque
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
 
-def bfs(x, y, cnt):
+def bfs(x, y):
     queue = deque()
     queue.append((x, y))
     graph[x][y] += 1
-    cnt += 1
+    cnt = 1
 
     while queue:
         x, y = queue.popleft()
@@ -35,7 +35,7 @@ for i in range(n):
     for j in range(n):
         if graph[i][j] == 1:
             total += 1
-            arr.append(bfs(i, j, 0))
+            arr.append(bfs(i, j))
 
 arr.sort()
 print(total)
