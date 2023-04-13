@@ -21,9 +21,6 @@ def bfs(graph, x, y):
                 queue.append([nx, ny])
                 graph[nx][ny] = graph[x][y] + 1
 
-            if nx == n - 1 and ny == m - 1:
-                break
-    
     return graph[n-1][m-1]
 
 n, m = map(int, input().split())
