@@ -1,4 +1,7 @@
 from collections import deque
+import sys
+def input():
+  return sys.stdin.readline().rstrip()
 
 n = int(input())
 graph = [list((input())) for _ in range(n)]
