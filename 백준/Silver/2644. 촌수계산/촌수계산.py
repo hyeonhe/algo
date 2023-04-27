@@ -4,17 +4,14 @@ graph = [[] for i in range(101)]
 n = int(input())
 a, b = map(int, input().split())
 m = int(input())
+visited = [0] * 101
 for i in range(m):
     x, y = map(int, input().split())
     graph[x].append(y)
     graph[y].append(x)
 
-visited = [0] * 101
-
-cnt = 0
 def bfs(start):
     queue = deque([start])
-
     while queue:
         x = queue.popleft()
         for i in graph[x]:
