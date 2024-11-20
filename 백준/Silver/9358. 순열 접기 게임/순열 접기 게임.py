@@ -9,10 +9,7 @@ for t in range(T):
     
     while N > 2:
         for i in range(math.ceil(N / 2)):
-            if N % 2 == 1 and i == math.floor(N / 2):
-                arr[i] *= 2
-            else:
-                arr[i] += arr[N-i-1]
+            arr[i] += arr[N-i-1]
                 
         N = math.ceil(N / 2)
         
